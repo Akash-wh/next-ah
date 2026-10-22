@@ -30,7 +30,7 @@ export default function FashionHero({
           {chapter}
         </span>
 
-        <div className="my-10 md:my-auto md:py-8">
+        <div className="my-5 md:my-auto md:py-8">
           <h1 className="mb-5 whitespace-pre-line font-serif text-[clamp(46px,5.6vw,90px)] font-normal leading-[1.07] tracking-[-0.035em] text-[#282722]">
             {title}
           </h1>
@@ -58,7 +58,7 @@ export default function FashionHero({
         </div>
       </div>
 
-      <div className="relative order-1 h-[55vh] min-h-80 md:order-2 md:h-full">
+      <div className="relative order-1 md:order-2 md:h-full">
         <Image
           src={image}
           alt={imageAlt}
