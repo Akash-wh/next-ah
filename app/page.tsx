@@ -3,14 +3,18 @@ import HeroBanner from "./components/HomeBanner";
 import RichText from "./components/RichText";
 import ImageCards from "./components/ImageCards";
 import FeaturedProducts from "./components/FeaturedProducts";
+import ImageWithText from "./components/ImageWithText";
+import USPSection from "./components/USPSection";
+import Newsletter from "./components/Newsletter";
 
 import Fashion from "./assets/Fashion.png";
-import Linen from  "./assets/Linen.png";
+import Linen from "./assets/Linen.png";
 import Everyday from "./assets/Everyday.png";
 import LinenBlazer from "./assets/LinenBlazer.png";
 import WideLegTrouser from "./assets/WideLegTrouser.png";
 import SilkShirt from "./assets/SilkShirt.png";
 import ColumnDress from "./assets/ColumnDress.png";
+import Story from "./assets/Story.png";
 
 const richTextData = {
   eyebrow: "A WARDROBE, NOT A MOMENT",
@@ -88,6 +92,47 @@ const featuredProductsData = {
   ],
 };
 
+const imageWithTextData = {
+  eyebrow: "BEHIND THE SEAMS / 01",
+  title: "Good things\ntake their time.",
+  description:
+    "From the first thread to the final stitch, we choose a slower path. Meet the people, places and practices behind every Aurel piece.",
+  linkText: "Read our story",
+  linkUrl: "/about",
+  image: Story,
+  imageAlt: "Artisan carefully cutting linen fabric in a workshop",
+  imagePosition: "left" as const,
+};
+
+const uspData = [
+  {
+    number: "01",
+    title: "Natural by nature",
+    description: "Thoughtfully sourced, tactile materials.",
+  },
+  {
+    number: "02",
+    title: "Made with intention",
+    description: "Small runs. Lasting relationships.",
+  },
+  {
+    number: "03",
+    title: "Here for the long run",
+    description: "Care, repair and wear on repeat.",
+  },
+];
+
+const newsletterData = {
+  eyebrow: "LETTERS FROM AUREL",
+  title: "A quieter kind of inbox.",
+  description:
+    "New chapters, thoughtful stories and first access to our collections.",
+  placeholder: "Your email address",
+  privacyText:
+    "By subscribing, you agree to our Privacy Policy. Unsubscribe anytime.",
+  buttonLabel: "Subscribe to newsletter",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -105,6 +150,9 @@ export default function HomePage() {
       <RichText {...richTextData} />
       <ImageCards {...imageCardsData} />
       <FeaturedProducts {...featuredProductsData} />
+      <ImageWithText {...imageWithTextData} />
+      <USPSection items={uspData} />
+      <Newsletter {...newsletterData} />
     </>
   );
 }
