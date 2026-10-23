@@ -35,13 +35,12 @@ export default function Footer({
   return (
     <footer className="w-full bg-[#292923] text-[#f7f5f1]">
       <div className="mx-auto max-w-[1800px] px-6 pb-6 pt-12 sm:px-8 sm:pt-16 lg:px-[4.4%] lg:pt-[4.2rem]">
-
         {/* Main footer */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[2.2fr_1.15fr_1.25fr_0.9fr] lg:gap-12">
-
           {/* Brand */}
           <div>
-            <Link href="/"
+            <Link
+              href="/"
               className="inline-block font-serif text-[48px] font-normal leading-none tracking-[-2px] sm:text-[58px]"
             >
               {logo}
@@ -75,7 +74,8 @@ export default function Footer({
                         <span className="ml-1.5 text-xs">↗</span>
                       </a>
                     ) : (
-                      <Link href={link.href}
+                      <Link
+                        href={link.href}
                         className="text-[13px] text-[#f0eee8] transition-colors hover:text-white sm:text-sm"
                       >
                         {link.label}
@@ -110,20 +110,20 @@ export default function Footer({
         {/* Divider */}
         <div className="mt-12 border-t border-[#55544d] pt-6 sm:mt-16">
           <div className="flex flex-col gap-5 text-[10px] text-[#d0cec5] sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-            <p>{copyright}</p>
+            <p className="text-center text-[13px]">{copyright}</p>
 
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 justify-center">
               {legalLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="transition-colors hover:text-white"
+                  className="transition-colors hover:text-white text-[13px]"
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <span>{locale}</span>
+              <span className="text-[13px]">{locale}</span>
             </div>
           </div>
         </div>
