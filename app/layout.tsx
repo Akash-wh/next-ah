@@ -56,7 +56,7 @@ const footerData = {
     {
       title: "CLIENT CARE",
       links: [
-        { label: "Shipping & returns", href: "/shipping-returns" },
+        { label: "Shipping & returns", href: "/shipping-and-returns" },
         { label: "Size guide", href: "/size-guide" },
         { label: "Care guide", href: "/care-guide" },
         { label: "FAQs", href: "/faq" },
