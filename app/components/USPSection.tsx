@@ -1,4 +1,3 @@
-
 interface USPItem {
   number: string;
   title: string;
@@ -16,7 +15,7 @@ export default function USPSection({ items }: USPSectionProps) {
         {items.map((item) => (
           <article
             key={item.number}
-            className="flex items-center gap-5 sm:gap-6"
+            className="flex items-center gap-5 sm:gap-6 justify-normal lg:justify-center"
           >
             {/* Number */}
             <span className="shrink-0 font-serif text-[16px] font-normal text-[#62634d]">
