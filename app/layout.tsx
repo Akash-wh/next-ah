@@ -24,8 +24,9 @@ const headerData = {
   logoLink: "/",
   navLinks: [
     { label: "Home", href: "/" },
-    { label: "Collection", href: "/collections" },
+    { label: "Products", href: "/collections" },
     { label: "About", href: "/about" },
+    { label: "Blogs", href: "/journal" },
     { label: "Contact", href: "/contact" },
   ],
   language: "EN / EUR",
@@ -49,7 +50,7 @@ const footerData = {
       links: [
         { label: "Collection", href: "/collections" },
         { label: "Our story", href: "/about" },
-        { label: "The journal", href: "/journal" },
+        { label: "Blogs", href: "/journal" },
         { label: "Contact", href: "/contact" },
       ],
     },
