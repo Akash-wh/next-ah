@@ -108,7 +108,7 @@ export default function ProductDetails({
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.55fr)_minmax(360px,1fr)] lg:gap-10 xl:gap-14">
           {/* Product image gallery */}
           <div className="min-w-0">
-            <div className="relative aspect-4/5 overflow-hidden bg-[#eeece5] sm:aspect-[5/5.2] lg:aspect-[0.91/1] xl:aspect-[1/1.03]">
+            <div className="relative aspect-4/5 overflow-hidden bg-[#eeece5]">
               {images.length > 0 ? (
                 <Image
                   src={images[activeImage]}

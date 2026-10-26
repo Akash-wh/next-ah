@@ -51,11 +51,13 @@ export default function CareGuide({
               className={`group p-6 sm:p-8 lg:p-10 ${
                 index !== 0 ? "border-t border-[#e5e1d9] sm:border-t-0" : ""
               } ${
-                index % 2 !== 0 ? "sm:border-l sm:border-[#e5e1d9]" : ""
-              } ${
-                index >= 2 ? "lg:border-t lg:border-[#e5e1d9]" : ""
-              } ${
-                index % 3 !== 0 ? "lg:border-l lg:border-[#e5e1d9]" : ""
+                index % 2 !== 0 && index !== 3
+                  ? "sm:border-l sm:border-[#e5e1d9]"
+                  : ""
+              } ${index >= 2 ? "lg:border-t lg:border-[#e5e1d9]" : ""} ${
+                index % 3 !== 0 && index !== 3
+                  ? "lg:border-l lg:border-[#e5e1d9]"
+                  : ""
               }`}
             >
               <div className="flex items-start justify-between">

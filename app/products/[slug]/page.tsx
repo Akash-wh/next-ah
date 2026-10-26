@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 
 import ProductDetails from "@/app/components/ProductDeatails";
 import ImageWithText from "../../components/ImageWithText";
+import RecommendedProducts from "@/app/components/RecommendedProducts";
 import Newsletter from "../../components/Newsletter";
+
 import ProductBanner from "../../assets/ProductBanner.png";
 import { products } from "../../data/products";
 
@@ -76,7 +78,13 @@ async function ProductContent({ params }: ProductPageProps) {
       />
 
       <ImageWithText {...imageWithTextData} />
-
+      <RecommendedProducts
+        products={products}
+        excludeProductId={product.id}
+        title="You may also like"
+        limit={4}
+        currency="€"
+      />
       <Newsletter {...newsletterData} />
     </>
   );
