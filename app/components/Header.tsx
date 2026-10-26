@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,7 +20,7 @@ interface HeaderProps {
   searchLink: string;
 }
 
-export default function Header({
+function HeaderContent({
   logo,
   logoLink,
   navLinks,
@@ -45,12 +44,12 @@ export default function Header({
   return (
     <header className="relative z-50 w-full border-b border-[#d3d3d3] bg-[#f7f5f1] text-[#292923]">
       <div className="relative flex h-18 items-center justify-between px-5 sm:px-8 lg:px-14">
-        {/* Mobile menu */}
+        {/* Mobile menu toggle */}
         <button
           type="button"
           aria-label="Toggle navigation"
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((open) => !open)}
           className="flex h-9 w-9 items-center justify-center md:hidden"
         >
           {menuOpen ? (
@@ -161,9 +160,8 @@ export default function Header({
               <rect x="4" y="7" width="16" height="14" rx="1.5" />
               <path d="M9 9V6A3 3 0 0 1 15 6V9" />
             </svg>
-            <span className="hidden text-[10px] sm:inline">
-              ({cartCount})
-            </span>
+
+            <span className="hidden text-[10px] sm:inline">({cartCount})</span>
           </Link>
         </div>
       </div>
@@ -181,12 +179,11 @@ export default function Header({
                 aria-current={active ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
                 className={`border-b border-[#e8e4dd] py-4 text-xs last:border-0 ${
-                  active
-                    ? "font-medium text-[#292923]"
-                    : "text-[#77736d]"
+                  active ? "font-medium text-[#292923]" : "text-[#77736d]"
                 }`}
               >
                 {link.label}
+
                 {active && (
                   <span className="ml-2 inline-block h-1 w-1 rounded-full bg-[#292923]" />
                 )}
@@ -202,11 +199,24 @@ export default function Header({
             My Account
           </Link>
 
-          <span className="py-2 text-[10px] text-[#77736d]">
-            {language}
-          </span>
+          <span className="py-2 text-[10px] text-[#77736d]">{language}</span>
         </nav>
       )}
     </header>
+  );
+}
+
+export default function Header(props: HeaderProps) {
+  return (
+    <Suspense
+      fallback={
+        <header
+          aria-hidden="true"
+          className="h-18 w-full border-b border-[#d3d3d3] bg-[#f7f5f1]"
+        />
+      }
+    >
+      <HeaderContent {...props} />
+    </Suspense>
   );
 }
